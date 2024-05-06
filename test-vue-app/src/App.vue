@@ -1,17 +1,17 @@
 <!-- test-vue-app/src/App.vue -->
 <template>
   <div id="app">
-    <Header />
+    <SiteHeader />
     <router-view />
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue';
+import SiteHeader from './components/SiteHeader.vue';
 
 export default {
   components: {
-    Header
+    SiteHeader
   }
 };
 </script>

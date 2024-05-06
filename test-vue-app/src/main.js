@@ -2,8 +2,7 @@
 import Vue from 'vue';
 import App from './App.vue';
 import VueRouter from 'vue-router';
-import CarList from './components/CarList.vue'; 
-import Header from './components/Header.vue';
+import CarList from './components/CarList.vue';
 
 Vue.config.productionTip = false;
 
