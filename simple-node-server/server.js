@@ -14,7 +14,7 @@ const requestListener = (req, res) => {
         filePath = carsDataFile;
         res.setHeader('Content-Type', 'application/json');
     } else {
-        filePath = path.join(publicFolder, req.url === '/' ? 'index.html' : req.url);
+        filePath = path.join(publicFolder, req.url);
     }
 
     const extname = String(path.extname(filePath)).toLowerCase();
@@ -33,15 +33,8 @@ const requestListener = (req, res) => {
     fs.readFile(filePath, (error, content) => {
         if (error) {
             if (error.code === 'ENOENT') {
-                fs.readFile(path.join(publicFolder, 'index.html'), (err, indexContent) => {
-                    if (err) {
-                        res.writeHead(500);
-                        res.end(`Sorry, an error occurred: ${err.code}`);
-                    } else {
-                        res.writeHead(200, { 'Content-Type': 'text/html' });
-                        res.end(indexContent, 'utf-8');
-                    }
-                });
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                res.end('<h1>404 Not Found</h1>');
             } else {
                 res.writeHead(500);
                 res.end(`Sorry, an error occurred: ${error.code}`);
