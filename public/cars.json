@@ -1,0 +1,21 @@
+/* public/cars.json */
+[
+    {
+        "id": 1,
+        "make": "Toyota",
+        "model": "Camry",
+        "year": 2021,
+        "color": "Silver",
+        "mileage": 15000,
+        "available": true
+    },
+    {
+        "id": 2,
+        "make": "Honda",
+        "model": "Civic",
+        "year": 2020,
+        "color": "Red",
+        "mileage": 20000,
+        "available": false
+    }
+]
