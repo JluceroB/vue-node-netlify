@@ -1,6 +1,6 @@
 [build]
   publish = "test-vue-app/dist"
-  command = "npm run build --prefix test-vue-app"
+  command = "npm install --prefix test-vue-app && npm run build --prefix test-vue-app"
 
 [functions]
   directory = "netlify/functions"
