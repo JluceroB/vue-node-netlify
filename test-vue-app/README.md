@@ -1,4 +1,4 @@
-# test-netlify
+# test-vue-app
 
 ## Project setup
 ```

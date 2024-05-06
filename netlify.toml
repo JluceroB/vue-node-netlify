@@ -1,0 +1,11 @@
+[build]
+  publish = "test-vue-app/dist"
+  command = "npm run build --prefix test-vue-app"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
