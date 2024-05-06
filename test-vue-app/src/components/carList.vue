@@ -1,4 +1,4 @@
-<!-- test-vue-app/src/components/CarList.vue -->
+<!-- CarList.vue -->
 <template>
     <div>
       <h2>Car Inventory</h2>
