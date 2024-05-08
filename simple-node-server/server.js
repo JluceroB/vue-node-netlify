@@ -12,8 +12,8 @@ const client = new MongoClient(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
-const dbName = 'CarDB'; // Adjust to your database name
-const collectionName = 'CarCollection'; // Adjust to your collection name
+const dbName = 'CarDB';
+const collectionName = 'CarCollection'; 
 
 const publicFolder = path.join(__dirname, '../public');
 
@@ -40,10 +40,10 @@ const requestListener = async (req, res) => {
             res.writeHead(500, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: 'Failed to fetch cars data' }));
         } finally {
-            // Avoid closing the connection, to reuse it across requests
-            // await client.close();
+          
         }
-    } else {
+    } 
+    else {
         filePath = path.join(publicFolder, req.url);
         const extname = String(path.extname(filePath)).toLowerCase();
         const mimeTypes = {
@@ -69,7 +69,7 @@ const sendFileContent = (res, filePath, contentType) => {
                 res.end('<h1>404 Not Found</h1>');
             } else {
                 res.writeHead(500);
-                res.end(`Sorry, an error occurred: ${error.code}`);
+                res.end(`Sorry, there was an error: ${error.code}`);
             }
         } else {
             res.writeHead(200, { 'Content-Type': contentType });
